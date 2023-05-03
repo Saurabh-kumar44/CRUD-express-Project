@@ -2,7 +2,6 @@
 //     res.render('index',{Title:"Home"});
 // }
 
-import { name } from "ejs";
 import studentModel  from "../models/student";
 class studentController {
     static createDoc = async (req,res)=>{
@@ -51,7 +50,7 @@ class studentController {
             // console.log(result);
             res.redirect("/");
         }catch(err){
-            console.log(error);
+            console.log(err);
         }
     } 
     static deleteDocById = async(req,res)=>{
@@ -60,7 +59,7 @@ class studentController {
             const result = await studentModel.findByIdAndDelete(req.params.id);
             res.redirect("/");
         }catch(err){
-            console.log(error);
+            console.log(err);
         }
     } 
 
